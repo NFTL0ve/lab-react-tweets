@@ -1,14 +1,14 @@
 import userEvent from "@testing-library/user-event";
 import ProfileImage from "../components/ProfileImage.js";
-
-
+import Message from "./Message.js";
+import User from "./User.js";
 
 function Tweet(props) {
  
   return (
     <div className="tweet">
       <img
-        src={props.detailsObj.user.image}
+        src={props.tweet.user.image}
         className="profile"
         alt="profile"
       />
@@ -16,14 +16,16 @@ function Tweet(props) {
       <div className="body">
         <div className="top">
           <span className="user">
-            <span className="name">{props.detailsObj.user.name}</span>
-            <span className="handle">{props.detailsObj.user.handle}</span>
+            <span className="name">{props.tweet.user.name}</span>
+            <span className="handle">{props.tweet.user.handle}</span>
           </span>
 
-          <span className="timestamp">{props.detailsObj.timestamp}</span>
+          <span className="timestamp">{props.tweet.timestamp}</span>
         </div>
 
-        <p className="message">{props.detailsObj.message}
+<p>
+        <span className="message">{props.tweet.message}</span>
+        
        
         </p>
 
@@ -41,7 +43,10 @@ function Tweet(props) {
   );
 }
 <ProfileImage></ProfileImage>;
-<userEvent></userEvent>
+<userEvent></userEvent>;
+<Message></Message>;
+<User></User>
+
 
 
 export default Tweet;
